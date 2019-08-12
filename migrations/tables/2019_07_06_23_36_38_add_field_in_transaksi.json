@@ -1,0 +1,21 @@
+	{
+		"action": "add column",
+		"table_name" : "transaksi",
+		"fields" : [
+			{
+				"name":"status",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"jumlah",
+				"data_type":"varchar",
+				"length":11
+			},
+			{
+				"name":"bukti_url",
+				"data_type":"varchar",
+				"length":255
+			}
+		]
+	}

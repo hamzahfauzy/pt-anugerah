@@ -1,16 +1,37 @@
 <?php
 namespace app;
 use vendor\zframework\Model;
-use app\UserMeta;
-use app\Post;
 
 class User extends Model
 {
 	static $table = "users";
-	static $fields = ["id","username","password","level"];
+	static $fields = ["id","nama","alamat","jenis_kelamin","email","password","level"];
 
-	function posts()
+	public function transaksi()
 	{
-		return $this->hasMany(Post::class, ["user_id"=>"id"]);
+		return $this->hasMany(Transaksi::class, ['user_id'=>'id']);
 	}
+
+	public function successTransactions()
+	{
+		$model = Transaksi::where('user_id',$this->id)->where('status',2)->get();
+		return $model;
+	}
+
+	public function usedTransaction()
+	{
+		$model = PenukaranHadiah::where('customer_id',$this->id)->get();
+		$usedTransaction = 0;
+		foreach($model as $data)
+			$usedTransaction += $data->jumlah_penukaran;
+		return $usedTransaction;
+	}
+
+	public function recommendation()
+	{
+		$jumlah_transaksi = count($this->successTransactions()) - $this->usedTransaction();
+		$hadiah = Hadiah::where('jumlah_transaksi','<=',$jumlah_transaksi)->get();
+		return $hadiah;
+	}
+
 }

@@ -1,0 +1,52 @@
+	{
+		"action": "create",
+		"table_name" : "ulasan",
+		"fields" : [
+			{
+				"name":"id",
+				"data_type":"int",
+				"length":11,
+				"default":"auto_increment"
+			},
+			{
+				"name":"user_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"produk_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"deskripsi",
+				"data_type":"text"
+			},
+			{
+				"name":"rating",
+				"data_type":"varchar",
+				"length":255
+			}
+		],
+		"primary_key" : "id",
+		"foreign_key" : [
+			{
+				"field_name":"user_id",
+				"references":"users",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			},
+			{
+				"field_name":"produk_id",
+				"references":"produk",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			}
+		]
+	}

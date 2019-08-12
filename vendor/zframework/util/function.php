@@ -1,5 +1,5 @@
 <?php
-
+use vendor\zframework\util\Assets as NewAssets;
 
 function base_url()
 {
@@ -8,6 +8,12 @@ function base_url()
 		return $protocol."://".$_SERVER['SERVER_NAME']."/".path_name."/".main_name;
 	else
 		return $protocol."://".$_SERVER['HTTP_HOST'];
+}
+
+function asset($location)
+{
+	$asset = new NewAssets;
+	return $asset->get($location);
 }
 
 function isSecure() {

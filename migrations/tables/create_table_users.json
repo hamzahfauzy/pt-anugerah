@@ -9,12 +9,21 @@
 				"default":"auto_increment"
 			},
 			{
-				"name":"name",
+				"name":"nama",
 				"data_type":"varchar",
 				"length":255
-			},,
+			},
 			{
-				"name":"username",
+				"name":"alamat",
+				"data_type":"text"
+			},
+			{
+				"name":"jenis_kelamin",
+				"data_type":"varchar",
+				"length":255
+			},
+			{
+				"name":"email",
 				"data_type":"varchar",
 				"length":255
 			},

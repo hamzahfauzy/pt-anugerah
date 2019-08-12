@@ -1,0 +1,53 @@
+	{
+		"action": "create",
+		"table_name" : "transaksi",
+		"fields" : [
+			{
+				"name":"id",
+				"data_type":"int",
+				"length":11,
+				"default":"auto_increment"
+			},
+			{
+				"name":"produk_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"user_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"created_at",
+				"data_type":"timestamp",
+				"default":"CURRENT_TIMESTAMP"
+			},
+			{
+				"name":"updated_at",
+				"data_type":"timestamp",
+				"default":"CURRENT_TIMESTAMP"
+			}
+		],
+		"primary_key" : "id",
+		"foreign_key" : [
+			{
+				"field_name":"produk_id",
+				"references":"produk",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			},
+			{
+				"field_name":"user_id",
+				"references":"users",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			}
+		]
+	}

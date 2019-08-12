@@ -1,0 +1,11 @@
+	{
+		"action": "add column",
+		"table_name" : "transaksi",
+		"fields" : [
+			{
+				"name":"down_payment",
+				"data_type":"varchar",
+				"length":11
+			}
+		]
+	}

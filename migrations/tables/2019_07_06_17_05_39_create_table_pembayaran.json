@@ -1,0 +1,59 @@
+	{
+		"action": "create",
+		"table_name" : "pembayaran",
+		"fields" : [
+			{
+				"name":"id",
+				"data_type":"int",
+				"length":11,
+				"default":"auto_increment"
+			},
+			{
+				"name":"transaksi_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"status",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"file_bukti",
+				"data_type":"varchar",
+				"length":255
+			},
+			{
+				"name":"jumlah",
+				"data_type":"varchar",
+				"length":255
+			},
+			{
+				"name":"tipe",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"created_at",
+				"data_type":"timestamp",
+				"default":"CURRENT_TIMESTAMP"
+			},
+			{
+				"name":"updated_at",
+				"data_type":"timestamp",
+				"default":"CURRENT_TIMESTAMP"
+			}
+		],
+		"primary_key" : "id",
+		"foreign_key" : [
+			{
+				"field_name":"transaksi_id",
+				"references":"transaksi",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			}
+		]
+	}

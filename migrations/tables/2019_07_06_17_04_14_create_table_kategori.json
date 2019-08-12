@@ -1,0 +1,18 @@
+	{
+		"action": "create",
+		"table_name" : "kategori",
+		"fields" : [
+			{
+				"name":"id",
+				"data_type":"int",
+				"length":11,
+				"default":"auto_increment"
+			},
+			{
+				"name":"nama",
+				"data_type":"varchar",
+				"length":50
+			}
+		],
+		"primary_key" : "id"
+	}

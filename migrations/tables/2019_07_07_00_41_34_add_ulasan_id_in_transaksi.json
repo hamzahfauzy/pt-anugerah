@@ -1,0 +1,11 @@
+	{
+		"action": "add column",
+		"table_name" : "transaksi",
+		"fields" : [
+			{
+				"name":"ulasan_id",
+				"data_type":"int",
+				"length":11
+			}
+		]
+	}

@@ -16,7 +16,7 @@ class AuthController extends Controller
 
 	function doLogin(Request $request)
 	{
-		$user = User::where('username',$request->username)->where('password',md5($request->password))->first();
+		$user = User::where('email',$request->email)->where('password',md5($request->password))->first();
 		if(!empty($user))
 		{
 			Session::set('id',$user->id);
@@ -34,9 +34,9 @@ class AuthController extends Controller
 		return $this->view->render('auth.register')->with("error",$error);
 	}
 
-	function doRegister(Requets $request)
+	function doRegister(Request $request)
 	{
-		$user = User::where("username",$request->username)->first();
+		$user = User::where("email",$request->email)->first();
 		if(!empty($user))
 		{
 			$this->redirect()->url('/register',['error' => 'exists']);
@@ -45,8 +45,10 @@ class AuthController extends Controller
 
 		$user = new User;
 		$user->save([
-			'name' => $request->name,
-			'username' => $request->username,
+			'nama' => $request->nama,
+			'alamat' => $request->alamat,
+			'jenis_kelamin' => $request->jenis_kelamin,
+			'email' => $request->email,
 			'password' => md5($request->password),
 		]);
 
@@ -54,7 +56,7 @@ class AuthController extends Controller
 		return;
 	}
 
-	function logout(Request $request)
+	function logout()
 	{
 		Session::destroy();
 		$this->redirect()->url('/');

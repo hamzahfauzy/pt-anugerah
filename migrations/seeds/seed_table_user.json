@@ -3,13 +3,19 @@
 	"values" : [
 		{
 			"id": 0,
-			"username": "admin",
+			"nama":"admin",
+			"alamat":"kisaran",
+			"jenis_kelamin":"Laki-laki",
+			"email": "admin@admin.com",
 			"password": {"value" : "admin","option":"md5"},
 			"level" : "admin"
 		},
 		{
 			"id": 0,
-			"username": "user",
+			"nama":"user",
+			"alamat":"kisaran",
+			"jenis_kelamin":"Laki-laki",
+			"email": "user@user.com",
 			"password": {"value" : "user","option":"md5"},
 			"level" : "user"
 		}

@@ -35,7 +35,7 @@ class Migration
 
 		if($jsonData->action == "add column")
 		{
-			$sql = "ALTER TABLE ".$jsonData->table_name;
+			$sql = "ALTER TABLE ".$jsonData->table_name." ADD COLUMN ";
 		}
 
 		$fields = "";
@@ -43,7 +43,7 @@ class Migration
 			$fields .= " ".$value->name." ".$value->data_type;
 			if(isset($value->length))
 			{
-				$fields .= "(".$value->length.")";
+				$fields .= " (".$value->length.")";
 			}
 			if(isset($value->default))
 			{

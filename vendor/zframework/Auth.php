@@ -12,7 +12,7 @@ class Auth {
 			Route::post('/login','AuthController@doLogin');
 			Route::post('/register','AuthController@doRegister');
 
-			Route::post('/logout','AuthController@logout');
+			Route::get('/logout','AuthController@logout');
 		});
 	}
 }

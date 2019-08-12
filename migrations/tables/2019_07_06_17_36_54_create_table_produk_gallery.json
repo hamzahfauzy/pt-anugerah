@@ -1,0 +1,34 @@
+	{
+		"action": "create",
+		"table_name" : "produk_gallery",
+		"fields" : [
+			{
+				"name":"id",
+				"data_type":"int",
+				"length":11,
+				"default":"auto_increment"
+			},
+			{
+				"name":"produk_id",
+				"data_type":"int",
+				"length":11
+			},
+			{
+				"name":"file_url",
+				"data_type":"varchar",
+				"length":255
+			}
+		],
+		"primary_key" : "id",
+		"foreign_key" : [
+			{
+				"field_name":"produk_id",
+				"references":"produk",
+				"references_field":"id",
+				"event":{
+					"delete":"cascade",
+					"update":"no action"
+				}
+			}
+		]
+	}

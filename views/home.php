@@ -1,7 +1,7 @@
 <?php 
 use vendor\zframework\Session;
 $this->load("partial.header");
-$this->load("partial.navbar") ?>
+?>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">

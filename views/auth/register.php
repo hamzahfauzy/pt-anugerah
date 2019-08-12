@@ -1,62 +1,56 @@
 <?php $this->load("partial.header") ?>
-<style type="text/css">
-.form-group {
-	margin-bottom: 0px;
-}
-
-#username, #password, #name {
-	font-size: 1.2em;
-}
-.login-wrapper {
-	background-color: rgba(255,255,255,0.7);
-	padding: 15px;
-	padding-top:20px;
-	padding-bottom:20px;
-}
-</style>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12 col-md-4 m-auto">
-			<br><br><br>
-			<div class="login-wrapper">
-				<h2 align="center" class="text-primary">Register</h2>
-				<hr>
-				<div class="form-container">
-					<?php if ($error) { ?>
-					<div class="alert alert-danger" role="alert">
-						Username is exists.
-					</div>						
-					<?php } ?>
+<div class="content-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5 m-auto">
+				<!-- main content section -->
+				<br>
+				<div class="login-container">
 					<form method="post" action="<?= base_url() ?>/register">
+						<center>
+							<img src="assets/favicon.png" width="100px">
+						</center>
+						<p></p>
+						<h2 align="center">Daftar Form</h2>
+						<p></p>
 						<div class="form-group">
-							<center>
-								<label><i class="fa fa-user"></i> Nama Lengkap</label>
-							</center>
-							<input type="text" name="name" id="name" class="form-control input-name" placeholder="name" required="">
-							<span class="form-error name">Fullame cannot be empty</span>
+							<label>Nama Lengkap</label>
+							<input type="text" name="nama" class="form-control" required="" placeholder="Nama Pengguna">
 						</div>
+
 						<div class="form-group">
-							<center>
-								<label><i class="fa fa-user"></i> Nama Pengguna</label>
-							</center>
-							<input type="text" name="username" id="username" class="form-control input-username" placeholder="Username" required="">
-							<span class="form-error username">username cannot be empty</span>
+							<label>Alamat</label>
+							<textarea class="form-control" required="" name="alamat" placeholder="alamat"></textarea>
 						</div>
+
 						<div class="form-group">
-							<center>
-								<label><i class="fa fa-lock"></i> Kata Sandi</label>
-							</center>
-							<input type="password" name="password" id="password" class="form-control input-password" placeholder="Password" required="">
-							<span class="form-error password">password cannot be empty</span>
+							<label>Jenis Kelamin</label>
+							<select class="form-control" required="" name="jenis_kelamin">
+								<option value="">-Pilih-</option>
+								<option value="Laki-laki">Laki-laki</option>
+								<option value="Perempuan">Perempuan</option>
+							</select>
 						</div>
+
 						<div class="form-group">
+							<label>Email</label>
+							<input type="text" name="email" class="form-control" required="" placeholder="Nama Pengguna">
+						</div>
+
+						<div class="form-group">
+							<label>Kata Sandi</label>
+							<input type="password" name="password" class="form-control" required="" placeholder="Kata Sandi">
+						</div>
+
+						<div class="form-group">
+							<button class="btn btn-danger btn-block"><i class="fa fa-sign-in-alt"></i> Login</button>
 							<p></p>
-							<button class="btn btn-success btn-block"><i class="fa fa-sign-in-alt"></i> REGISTER</button>
+							<center>
+								Sudah punya akun ? <a href="<?= base_url() ?>/login">Login</a>
+							</center>
 						</div>
 					</form>
 				</div>
-				<br>
-				<p align="center"> Copyright &copy; 2019 - <a href="#">Z Framework</a></p>
 			</div>
 		</div>
 	</div>
